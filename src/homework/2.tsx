@@ -1,5 +1,13 @@
 import React, {useReducer} from "react";
 
+class State {
+  constructor(public isRequestInProgress: boolean, public requestStep: string) { };
+};
+
+class Action{
+  constructor(public type: 'START_REQUEST' | 'PENDING_REQUEST' | 'FINISH_REQUEST' | 'RESET_REQUEST') { };
+}
+
 const initialState: State = {
   isRequestInProgress: false,
   requestStep: 'idle',
